@@ -2,28 +2,51 @@
 
 /*------------------------about section tabs-------------------*/
 
-(() =>{
-        const aboutSection = document.querySelector(".about-section"),
-        tabsContainer = document.querySelector(".about-tabs");
+(() => {
+  const aboutSection = document.querySelector(".about-section");
+  const tabsContainer = document.querySelector(".about-tabs");
+  const projectsLink = document.querySelector(".tab-item[data-target='.skills']");
+  const experienceLink = document.querySelector(".tab-item[data-target='.experience']");
+  const educationLink = document.querySelector(".tab-item[data-target='.education']");
+  const projectsAnchor = document.querySelector("a[href='#projects']");
+  const experienceAnchor = document.querySelector("a[href='#experience']");
+  const educationAnchor = document.querySelector("a[href='#education']");
 
-        tabsContainer.addEventListener("click", (event)=>{
-            /*if event.target contains 'tab-item' class and not contains
-            'active' class*/
-            if(event.target.classList.contains("tab-item") &&
-                !event.target.classList.contains("active")){
-                const target = event.target.getAttribute("data-target");
-                // deactivate existing active 'tab-item'
-                tabsContainer.querySelector(".active").classList.remove("outer-shadow","active");
-                //activate new 'tab-item'
-                event.target.classList.add("active","outer-shadow");
-                //deactivate existing active 'tab-content'
-                aboutSection.querySelector(".tab-content.active").classList.remove("active");
-                //activate new 'tab-content'
-                aboutSection.querySelector(target).classList.add("active");
-            }
-        })
+  tabsContainer.addEventListener("click", (event) => {
+    if (event.target.classList.contains("tab-item") && !event.target.classList.contains("active")) {
+      const target = event.target.getAttribute("data-target");
+      // deactivate existing active 'tab-item'
+      tabsContainer.querySelector(".active").classList.remove("active");
+      // activate new 'tab-item'
+      event.target.classList.add("active");
+      // deactivate existing active 'tab-content'
+      aboutSection.querySelector(".tab-content.active").classList.remove("active");
+      // activate new 'tab-content'
+      aboutSection.querySelector(target).classList.add("active");
+    }
+  });
+
+  // Activate default tabs
+  projectsLink.click();
+
+  // Add click event listener to the projects anchor
+  projectsAnchor.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    projectsLink.click(); // Simulate click on the projects link
+  });
+
+  // Add click event listener to the experience anchor
+  experienceAnchor.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    experienceLink.click(); // Simulate click on the experience link
+  });
+
+  // Add click event listener to the education anchor
+  educationAnchor.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    educationLink.click(); // Simulate click on the education link
+  });
 })();
-
 // JavaScript code to handle slider functionality
 document.addEventListener("DOMContentLoaded", function () {
     const prevBtn = document.querySelector(".slider-arrows .prev");
@@ -104,17 +127,17 @@ function draw() {
   // Carousel
   document.addEventListener("DOMContentLoaded", function() {
     // Get the carousel element
-    var carousel = document.querySelector(".carousel");
+    const carousel = document.querySelector(".carousel");
 
     // Get the carousel items
-    var carouselItems = carousel.querySelectorAll(".carousel-item");
+    const carouselItems = carousel.querySelectorAll(".carousel-item");
 
     // Get the previous and next buttons
-    var prevButton = carousel.querySelector(".carousel-control-prev");
-    var nextButton = carousel.querySelector(".carousel-control-next");
+    const prevButton = carousel.querySelector(".carousel-control-prev");
+    const nextButton = carousel.querySelector(".carousel-control-next");
 
     // Initialize the current index
-    var currentIndex = 0;
+    let currentIndex = 0;
 
     // Add event listener for the previous button
     prevButton.addEventListener("click", function() {
@@ -155,3 +178,48 @@ function draw() {
       carouselItems[currentIndex].classList.add("active");
     }
   });
+  //NAVBAS
+  const navbarToggle = document.querySelector('.navbar-toggle');
+  const navbarMenu = document.querySelector('.navbar-menu');
+
+  navbarToggle.addEventListener('click', function() {
+    navbarMenu.classList.toggle('active');
+  });
+
+
+ // Get the modal
+ const modal = document.getElementById("myModal");
+
+ // Get the button that opens the modal
+ const btn = document.getElementById("contact");
+
+ // Get the <span> element that closes the modal
+ const span = document.getElementsByClassName("close")[0];
+
+ // When the user clicks the button, open the modal
+ btn.onclick = function() {
+   modal.style.display = "block";
+ }
+
+ // When the user clicks on <span> (x), close the modal
+ span.onclick = function() {
+   modal.style.display = "none";
+ }
+
+ // When the user clicks anywhere outside of the modal, close it
+ window.onclick = function(event) {
+   if (event.target == modal) {
+     modal.style.display = "none";
+   }
+ }
+
+
+ // Scroll to target section when a link is clicked
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
