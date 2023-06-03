@@ -936,4 +936,20 @@ canvas {
         text-align: center;
       margin: 20px 0 0;
     }
+
+    .about-section .timeline .timeline-item-inner .icon {
+        display: none;
+      }
+
+      .about-section .timeline .timeline-item:nth-child(odd) .icon,
+      .about-section .timeline .timeline-item:nth-child(even) .icon {
+        display: none;
+      }
+      .about-section .timeline .timeline-item:nth-child(odd) .timeline-item-inner:before {
+        display: none;
+    }
+
+    .about-section .timeline .timeline-item:nth-child(even) .timeline-item-inner:before {
+        display: none;
+    }
   }
