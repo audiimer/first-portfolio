@@ -1,16 +1,18 @@
-
-
 /*------------------------about section tabs-------------------*/
 
 (() => {
   const aboutSection = document.querySelector(".about-section");
   const tabsContainer = document.querySelector(".about-tabs");
-  const projectsLink = document.querySelector(".tab-item[data-target='.skills']");
+
+  const projectsLink = document.querySelector(".tab-item[data-target='.projects']");
   const experienceLink = document.querySelector(".tab-item[data-target='.experience']");
   const educationLink = document.querySelector(".tab-item[data-target='.education']");
+  const certificationLink = document.querySelector(".tab-item[data-target='.certification']");
+
   const projectsAnchor = document.querySelector("a[href='#projects']");
   const experienceAnchor = document.querySelector("a[href='#experience']");
   const educationAnchor = document.querySelector("a[href='#education']");
+  const certificationAnchor = document.querySelector("a[href='#certification']");
 
   tabsContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("tab-item") && !event.target.classList.contains("active")) {
@@ -46,31 +48,44 @@
     event.preventDefault(); // Prevent default anchor behavior
     educationLink.click(); // Simulate click on the education link
   });
-})();
-// JavaScript code to handle slider functionality
-document.addEventListener("DOMContentLoaded", function () {
-    const prevBtn = document.querySelector(".slider-arrows .prev");
-    const nextBtn = document.querySelector(".slider-arrows .next");
-    const sliderContainer = document.querySelector(".slider-container");
-    const sliderItems = document.querySelectorAll(".slider-item");
-    let currentIndex = 0;
-
-    // Function to update the active slider item
-    function updateSlider() {
-      sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    // Event listeners for arrow buttons
-    prevBtn.addEventListener("click", function () {
-      currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
-      updateSlider();
-    });
-
-    nextBtn.addEventListener("click", function () {
-      currentIndex = (currentIndex + 1) % sliderItems.length;
-      updateSlider();
-    });
+  certificationAnchor.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    certificationLink.click(); // Simulate click on the education link
   });
+})();
+
+
+// JavaScript code to handle slider functionality
+document.addEventListener("DOMContentLoaded", function() {
+  const carousel = document.querySelector(".carousel");
+  const carouselItems = carousel.querySelectorAll(".carousel-item");
+  const prevButton = carousel.querySelector(".carousel-control-prev");
+  const nextButton = carousel.querySelector(".carousel-control-next");
+  let currentIndex = 0;
+
+  function updateActiveItem() {
+    carouselItems.forEach(function(item) {
+      item.classList.remove("active");
+    });
+    carouselItems[currentIndex].classList.add("active");
+  }
+
+  prevButton.addEventListener("click", function() {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = carouselItems.length - 1;
+    }
+    updateActiveItem();
+  });
+
+  nextButton.addEventListener("click", function() {
+    currentIndex++;
+    if (currentIndex >= carouselItems.length) {
+      currentIndex = 0;
+    }
+    updateActiveItem();
+  });
+});
 
 
 
@@ -124,60 +139,7 @@ function draw() {
 
   setInterval(draw, 35);
 
-  // Carousel
-  document.addEventListener("DOMContentLoaded", function() {
-    // Get the carousel element
-    const carousel = document.querySelector(".carousel");
 
-    // Get the carousel items
-    const carouselItems = carousel.querySelectorAll(".carousel-item");
-
-    // Get the previous and next buttons
-    const prevButton = carousel.querySelector(".carousel-control-prev");
-    const nextButton = carousel.querySelector(".carousel-control-next");
-
-    // Initialize the current index
-    let currentIndex = 0;
-
-    // Add event listener for the previous button
-    prevButton.addEventListener("click", function() {
-      // Decrement the current index
-      currentIndex--;
-
-      // Wrap around to the last item if the index goes below 0
-      if (currentIndex < 0) {
-        currentIndex = carouselItems.length - 1;
-      }
-
-      // Update the active item
-      updateActiveItem();
-    });
-
-    // Add event listener for the next button
-    nextButton.addEventListener("click", function() {
-      // Increment the current index
-      currentIndex++;
-
-      // Wrap around to the first item if the index exceeds the number of items
-      if (currentIndex >= carouselItems.length) {
-        currentIndex = 0;
-      }
-
-      // Update the active item
-      updateActiveItem();
-    });
-
-    // Function to update the active item and indicators
-    function updateActiveItem() {
-      // Remove the "active" class from all items
-      carouselItems.forEach(function(item) {
-        item.classList.remove("active");
-      });
-
-      // Add the "active" class to the current item
-      carouselItems[currentIndex].classList.add("active");
-    }
-  });
   //NAVBAS
   const navbarToggle = document.querySelector('.navbar-toggle');
   const navbarMenu = document.querySelector('.navbar-menu');

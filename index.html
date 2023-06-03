@@ -5,9 +5,7 @@
   <meta charset="utf-8">
   <title>Personal Portfolio Website</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous">
-  </script>
+
   <!-- main css -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -20,13 +18,10 @@
   <!-- navigation menu start  -->
   <header>
     <nav class="navbar">
-      <div class="navbar-brand">
-
-        <button class="navbar-toggle" aria-label="Toggle Navigation">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+      <div class="navbar-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
       <ul class="navbar-menu">
         <li><a href="#">Home</a></li>
@@ -34,6 +29,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
+        <li><a href="#certification">Certification</a></li>
         <li><a href="#main-info">Contact</a></li>
       </ul>
     </nav>
@@ -70,7 +66,7 @@
           <p>Hello</p>
           <h2>I'm Audis Mercado</h2>
           <h1>Computer Science Graduate & Self-taught programmer</h1>
-          <a href="#" class="btn-1  hover-in-shadow">About Me</a>
+          <a href="#about-section" class="btn-1  hover-in-shadow">About Me</a>
           <canvas id="c">
         </div>
         <div class="home-img">
@@ -97,7 +93,8 @@
           </div>
           <!-- social links start -->
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/audis-mercado/" class=" btn-1 hover-in-shadow" target="_blank">Linked<i class="fab fa-linkedin"></i> Profile </a>
+            <a href="https://www.linkedin.com/in/audis-mercado/" class=" btn-1 hover-in-shadow" target="_blank">Linked<i
+                class="fab fa-linkedin"></i> Profile </a>
           </div>
           <!-- social links end -->
         </div>
@@ -114,25 +111,26 @@
             independently. My ultimate goal is to
             complete all the available courses in the program and become a Full-Stack JavaScript Software Engineer. So
             far, I have made significant progress and have been able to create several projects. However, I will not be
-            satisfied until I have finished the entire curriculum and can apply my skills and abilities in my
+            satisfied until I have finished the entire curriculum and can apply my projects and abilities in my
             professional career.</p>
-          <a href="amercadoresume.pdf" class="btn-1 hover-in-shadow" target="_blank">Download Resume</a>
-          <a href="#" id="contact" class="btn-1 hover-in-shadow">Contact Me</a>
+          <a href="amercadoresume.pdf" class="btn-1 hover-in-shadow" download target="_blank">Download Resume</a>
+          <a id="contact" class="btn-1 hover-in-shadow">Contact Me</a>
         </div>
       </div>
       <!-- about tabs start -->
       <div class="row">
         <div class="about-tabs">
-          <span id="projects" class="tab-item active" data-target=".skills">projects</span>
+          <span id="projects" class="tab-item active" data-target=".projects">projects</span>
           <span id="experience" class=" tab-item" data-target=".experience">experience</span>
           <span id="education" class=" tab-item" data-target=".education">education</span>
+          <span id="certification" class=" tab-item" data-target=".certification">certification</span>
         </div>
       </div>
       <!-- about tabs end-->
 
       <!-- carousel start -->
       <div class="row">
-        <div class="skills tab-content active">
+        <div class="projects tab-content active">
           <div class="row">
             <div class="carousel">
               <div class="carousel-inner">
@@ -142,7 +140,8 @@
                     <h5>Vending Machine</h5>
                     <p>The vending machine app features a sophisticated product inventory system and a secure PIN
                       authentication mechanism. </p>
-                    <a href="#" class="btn-1 hover-in-shadow">Code Source</a>
+                    <a href="https://github.com/audiimer/vending-machine" class="btn-1 hover-in-shadow"
+                      target="_blank">Code Source</a>
                   </div>
                 </div>
                 <div class="carousel-item">
@@ -151,7 +150,8 @@
                     <h5>Tic Tac Toe</h5>
                     <p>Classic Tic Tac Toe app with dynamic gameplay against human or AI opponents, with customizable
                       symbol selection of X or O.</p>
-                    <a href="#" class="btn-1  hover-in-shadow">Code Source</a>
+                    <a href="https://github.com/audiimer/tic-tac-toe-beta" class="btn-1  hover-in-shadow"
+                      target="_blank">Code Source</a>
 
                   </div>
                 </div>
@@ -161,14 +161,25 @@
                     <h5>Palindrome Checker</h5>
                     <p>The palindrome checker app accepts user input and employs an algorithm to determine
                       whether the entered word qualifies as a palindrome.</p>
-                    <a href="#" class="btn-1 hover-in-shadow">Code Source</a>
+                    <a href="https://github.com/audiimer/palindrome-app" class="btn-1 hover-in-shadow"
+                      target="_blank">Code Source</a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="./img/projects/google-drive-download.png" class="carousel-image" alt="...">
+                  <div class="carousel-caption">
+                    <h5>Google Drive Download</h5>
+                    <p>This app takes a Google Drive link and generates a direct download link, as well as offers audio
+                      and video/document embedding functionalities.</p>
+                    <a href="https://github.com/audiimer/google-direct-download-link-generator"
+                      class="btn-1 hover-in-shadow" target="_blank">Code Source</a>
                   </div>
                 </div>
               </div>
-              <button class="carousel-control-prev" type="button">
+              <button class="carousel-control-prev" type="button" data-target=".carousel" data-slide="prev">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
               </button>
-              <button class="carousel-control-next" type="button">
+              <button class="carousel-control-next" type="button" data-target=".carousel" data-slide="next">
                 <i class="fa fa-arrow-right" aria-hidden="true"></i>
               </button>
             </div>
@@ -178,7 +189,7 @@
           </div>
         </div>
       </div>
-      <!-- skills end -->
+      <!-- projects end -->
       <!-- experience section start -->
       <div class="row">
         <div class="experience tab-content">
@@ -187,7 +198,7 @@
               <div class="row">
                 <!-- timeline item start -->
                 <div class="timeline-item">
-                  <div class="timeline-item-inner">
+                  <div class="timeline-item-inner timeline-content">
                     <i class="fas fa-briefcase icon"></i>
                     <span>2022 - 2023</span>
                     <h3>SOFTWARE QUALITY ASSURANCE ENGINEER (INTERNSHIP)</h3>
@@ -205,7 +216,7 @@
                 <!-- timeline item end -->
                 <!-- timeline item start -->
                 <div class="timeline-item">
-                  <div class="timeline-item-inner">
+                  <div class="timeline-item-inner timeline-content">
                     <i class="fas fa-briefcase icon"></i>
                     <span>2021 - 2023</span>
                     <h3>INBOUND VENDOR RECEIVE/CUSTOMER RETURNS ASSOCIATE</h3>
@@ -222,7 +233,7 @@
                 <!-- timeline item end -->
                 <!-- timeline item start -->
                 <div class="timeline-item">
-                  <div class="timeline-item-inner">
+                  <div class="timeline-item-inner timeline-content">
                     <i class="fas fa-briefcase icon"></i>
                     <span>2013 – 2019</span>
                     <h3>SALES FLOOR SUPERVISOR</h3>
@@ -249,13 +260,13 @@
 
       <!-- education start -->
       <div class="row">
-        <div class="education tab-content">
-          <div class="row">
-            <div class="timeline">
-              <div class="row">
+        <div class="education tab-content ">
+          <div class="row ">
+            <div class="timeline ">
+              <div class="row ">
                 <!-- timeline item start -->
-                <div class="timeline-item">
-                  <div class="timeline-item-inner">
+                <div class="timeline-item ">
+                  <div class="timeline-item-inner timeline-content">
                     <i class="fas fa-graduation-cap icon"></i>
                     <span>2023</span>
                     <h3>APP ACADEMY OPEN BOOTCAMP </h3>
@@ -271,10 +282,10 @@
                 <!-- timeline item end -->
                 <!-- timeline item start -->
                 <div class="timeline-item">
-                  <div class="timeline-item-inner">
+                  <div class="timeline-item-inner timeline-content">
                     <i class="fas fa-graduation-cap icon"></i>
                     <span>2020-2021</span>
-                    <h3>ASSOCIATE OF APPLIED SCIENCE /COMPUTER SCIENCE</h3>
+                    <h3>ASSOCIATE OF APPLIED SCIENCE / COMPUTER SCIENCE</h3>
                     <h4>Cumulative GPA: 4.0/4.0</h4>
                     <br>
                     <h4>Skills Learned:</h4>
@@ -289,10 +300,10 @@
                 <!-- timeline item end -->
                 <!-- timeline item start -->
                 <div class="timeline-item">
-                  <div class="timeline-item-inner">
+                  <div class="timeline-item-inner timeline-content">
                     <i class="fas fa-graduation-cap icon"></i>
                     <span>2012 – 2016</span>
-                    <h3>BACHELOR’S DEGREE IN BUSINESS ADMINISTRATION/HUMAN RESOURCE MANAGEMENT</h3>
+                    <h3>BACHELOR’S DEGREE IN BUSINESS ADMINISTRATION / HUMAN RESOURCE MANAGEMENT</h3>
                     <h4>Cumulative GPA: 3.5/4.0</h4>
                     <br>
                     <h4>Skills Learned:</h4>
@@ -302,6 +313,75 @@
                     <p>Communication and Interpersonal Skills</p>
                     <p>Compensation and Benefits</p>
                     <p>HR Policies and Compliance</p>
+                  </div>
+                </div>
+                <!-- timeline item end -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- education end -->
+      <!-- certification start -->
+      <div class="row">
+        <div class="certification tab-content ">
+          <div class="row ">
+            <div class="timeline ">
+              <div class="row ">
+                <!-- timeline item start -->
+                <div class="timeline-item">
+                  <div class="timeline-item-inner timeline-content">
+                    <i class="fas fa-solid fa-award icon"></i>
+                    <span>2021</span>
+                    <h3>GOOGLE IT SUPPORT SPECIALIZATION</h3>
+                    <h4>By Jose Portilla</h4>
+
+                    <p>Completed the course <a class="links"
+                        href="https://www.coursera.org/account/accomplishments/specialization/certificate/HLT6HE5RE4SP"
+                        target="_blank">Google IT Support</a> that covered the basics of an entry level IT position such
+                      as: Technical Support, Troubleshooting, IT Security, System Admin.</p>
+                  </div>
+                </div>
+                <!-- timeline item end -->
+                <!-- timeline item start -->
+                <div class="timeline-item">
+                  <div class="timeline-item-inner timeline-content">
+                    <i class="fas fa-solid fa-award icon"></i>
+                    <span>2021</span>
+                    <h3>HTML, CSS, AND JAVASCRIPT FOR WEB DEVELOPERS</h3>
+                    <h4>By Yaakov Chaikin</h4>
+
+                    <p>Completed the course <a class="links"
+                        href="https://www.coursera.org/account/accomplishments/verify/2NWRRJ78ZWTY?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
+                        target="_blank">HTML, CSS, and JavaScript for Web Developers</a> that covered the foundations of
+                      the language with some beginner friendly projects.</p>
+                  </div>
+                </div>
+                <!-- timeline item end -->
+                <!-- timeline item start -->
+                <div class="timeline-item">
+                  <div class="timeline-item-inner timeline-content">
+                    <i class="fas fa-solid fa-award icon"></i>
+                    <span>2021</span>
+                    <h3>THE COMPLETE PYTHON BOOTCAMP FROM ZERO TO HERO</h3>
+                    <h4>By Jose Portilla</h4>
+
+                    <p>Completed the course <a class="links"
+                        href="https://www.udemy.com/certificate/UC-f3f7c08e-278f-4ec0-a0af-676882b55eb9/"
+                        target="_blank">The Complete Python Bootcamp From Zero to Hero</a> that covered the foundations
+                      of the programming language.</p>
+                  </div>
+                </div>
+                <!-- timeline item end -->
+                <!-- timeline item start -->
+                <div class="timeline-item">
+                  <div class="timeline-item-inner timeline-content">
+                    <i class="fas fa-solid fa-award icon"></i>
+                    <span>2020</span>
+                    <h3>ACADEMIC EXCELENCE CERTIFICATE</h3>
+                    <h4>By Inter american University of Puerto Rico</h4>
+                    <p>Certificate issued for having a perfect GPA for two consecutive semesters.</p>
                   </div>
                 </div>
                 <!-- timeline item end -->
@@ -322,6 +402,9 @@
   <script src="js/main.js"></script>
   <!-- style switcher js -->
   <script src="js/style-switcher.js"></script>
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>
