@@ -140,7 +140,7 @@ function draw() {
   setInterval(draw, 35);
 
 
-  //NAVBAS
+  //NAVBAR
   const navbarToggle = document.querySelector('.navbar-toggle');
   const navbarMenu = document.querySelector('.navbar-menu');
 
